@@ -1,0 +1,10 @@
+<%= form_for [@commentable, Comment.new] do |f| %>
+
+  <div class="form-group">
+    <%= f.text_area :context, rows: 4, placeholder: "Add a comment." %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

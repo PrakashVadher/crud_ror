@@ -1,0 +1,6 @@
+class Product < ApplicationRecord
+	mount_uploader :image, AttachmentUploader
+	has_many :comments, as: :commentable
+	belongs_to :user
+	
+end

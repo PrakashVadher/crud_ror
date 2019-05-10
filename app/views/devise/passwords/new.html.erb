@@ -1,0 +1,22 @@
+<div class="card ">
+    <div class="card-header text-center">
+      <h1>Forgot Password</h1>
+      <span class="splash-description">Please enter your user information.</span></div>
+    <div class="card-body">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  			<%= devise_error_messages! %>
+            <div class="form-group">
+            	<%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form-control form-control-lg" %>               
+            </div>
+            <%= f.submit "Send me reset password instructions",class:"btn btn-primary btn-lg btn-block" %>
+        <% end %>                
+    </div>
+    <div class="card-footer bg-white p-0  ">
+        <div class="card-footer-item card-footer-item-bordered">
+            <%= link_to "Create New Account", new_user_registration_url, class:"footer-link" %>
+        </div>
+        <div class="card-footer-item card-footer-item-bordered">
+          <%= link_to "Sign In",new_user_session_url, class: "footer-link" %>                    
+        </div>
+    </div>
+</div>
